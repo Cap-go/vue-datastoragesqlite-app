@@ -3,6 +3,7 @@
   <button @click="$router.push('/storedefault')">StoreDefault</button>
   <button @click="$router.push('/storeonedbonetable')">StoreOneDBOneTable</button>
   <button @click="$router.push('/storeonedbtwotables')">StoreOneDBTwoTables</button>
+  <button @click="$router.push('/storewrapper')">StoreWithWrapper</button>
 </template>
 <style>
 h1 {

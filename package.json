@@ -1,6 +1,6 @@
 {
   "name": "vue-datastoragesqlite-app",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "update": "npm install --save capacitor-data-storage-sqlite@latest --save-dev vue-data-storage-sqlite-hook@latest",
@@ -30,10 +30,10 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
-    "capacitor-data-storage-sqlite": "^2.4.2-2",
+    "capacitor-data-storage-sqlite": "^2.4.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
-    "vue-data-storage-sqlite-hook": "0.0.3"
+    "vue-data-storage-sqlite-hook": "0.0.4"
   },
   "description": "Vue App for capacitor-data-storage-sqlite",
   "repository": {

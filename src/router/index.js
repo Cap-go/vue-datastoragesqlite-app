@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import StoreDefault from "@/views/StoreDefault.vue";
 import StoreOneDBOneTable from "@/views/StoreOneDBOneTable.vue";
 import StoreOneDBTwoTables from "@/views/StoreOneDBTwoTables.vue";
+import StoreWithWrapper from "@/views/StoreWithWrapper.vue";
 import NotFound from "@/views/NotFound.vue";
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: "/storeonedbtwotables",
     name: "StoreOneDBTwoTables",
     component: StoreOneDBTwoTables,
+  },
+  {
+    path: "/storewrapper",
+    name: "StoreWithWrapper",
+    component: StoreWithWrapper,
   },
   {
     path: "/:catchAll(.*)",
