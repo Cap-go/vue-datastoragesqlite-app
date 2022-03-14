@@ -1,13 +1,6 @@
 <template>
   <h1>StoreOneDBTwoTables</h1>
-  <Suspense>
-    <template #default>
-      <OneDBTwoTablesTest />
-    </template>
-    <template #feedback>
-      <div> Loading ... </div>
-    </template>
-  </Suspense>
+  <OneDBTwoTablesTest />
 </template>
 <script>
 import OneDBTwoTablesTest from '@/components/OneDBTwoTablesTest.vue';

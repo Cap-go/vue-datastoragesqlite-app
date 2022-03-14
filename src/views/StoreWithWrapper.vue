@@ -1,13 +1,6 @@
 <template>
   <h1>StoreWithWrapper</h1>
-  <Suspense>
-    <template #default>
-      <WrapperTest />
-    </template>
-    <template #feedback>
-      <div> Loading ... </div>
-    </template>
-  </Suspense>
+  <WrapperTest />
 </template>
 <script>
 import WrapperTest from '@/components/WrapperTest.vue';

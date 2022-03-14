@@ -5,6 +5,11 @@
   <button @click="$router.push('/storeonedbtwotables')">StoreOneDBTwoTables</button>
   <button @click="$router.push('/storewrapper')">StoreWithWrapper</button>
 </template>
+<script>
+  export default {
+    name: 'HomePage',
+  }
+</script>
 <style>
 h1 {
     text-align: center;

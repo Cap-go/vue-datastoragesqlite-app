@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Home from "@/views/Home.vue";
+import HomePage from "@/views/HomePage.vue";
 import StoreDefault from "@/views/StoreDefault.vue";
 import StoreOneDBOneTable from "@/views/StoreOneDBOneTable.vue";
 import StoreOneDBTwoTables from "@/views/StoreOneDBTwoTables.vue";
@@ -9,8 +9,8 @@ import NotFound from "@/views/NotFound.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "HomePage",
+    component: HomePage,
   },
   {
     path: "/storedefault",

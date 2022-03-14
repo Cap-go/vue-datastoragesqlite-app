@@ -1,13 +1,6 @@
 <template>
   <h1>StoreOneDBOneTable</h1>
-  <Suspense>
-    <template #default>
-      <OneDBOneTableTest />
-    </template>
-    <template #feedback>
-      <div> Loading ... </div>
-    </template>
-  </Suspense>
+  <OneDBOneTableTest />
 </template>
 <script>
 import OneDBOneTableTest from '@/components/OneDBOneTableTest.vue';

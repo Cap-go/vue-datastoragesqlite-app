@@ -9,22 +9,67 @@
 </template>
 
 <script >
-import { defineComponent, ref } from 'vue';
-import { Capacitor, Plugins } from '@capacitor/core';
-import 'capacitor-data-storage-sqlite';
+import { defineComponent, ref, onMounted } from 'vue';
+import { Capacitor } from '@capacitor/core';
+import { CapacitorDataStorageSqlite } from 'capacitor-data-storage-sqlite';
 import { StorageAPIWrapper } from '../Utils/StorageAPIWrapper';
 
 export default defineComponent({
   name: 'WrapperTest',
-  async setup() {
+  setup() {
     const log = ref("");
-    const { CapacitorDataStorageSqlite } = Plugins;
     const platform = Capacitor.getPlatform();
     console.log("*** platform " + platform);
     const storageSQLite = CapacitorDataStorageSqlite;
-    const wrapper = new StorageAPIWrapper(storageSQLite);
+    const wrapper = StorageAPIWrapper(storageSQLite);
+    let errMsg = ""; 
+    onMounted(async () => {
+      const wrapperError = (err) => {
+          log.value = log.value.concat(`\n!! ${err} !!\n`); 
+          log.value = log.value.concat("\n**** Test Wrapper failed ****\n"); 
+      }
+      // Running the test
+      log.value = log.value.concat("**** Starting Test Wrapper Store ****\n"); 
+      try {
+        await wrapper.openStore({database:"wrapperStore",table:"wrapperData"});
+        console.log("after openStore");
+        await wrapper.clear();
+        await wrapper.setItem('session','Session Opened');
+        const value = await wrapper.getItem('session');
+        if( value !== 'Session Opened') wrapperError('setItem/getItem session failed');
+        const result = await wrapper.isKey('session');
+        if(!result) wrapperError('isKey "session" failed');
+        
+        log.value = log.value.concat("\n**** Test Wrapper was successful ****\n"); 
+      } catch(err) {
+        wrapperError (err);     
+      }
+/*
+      wrapper.openStore({database:"wrapperStore",table:"wrapperData"},(res,err) => {
+        if(err) {
+          wrapperError(err);
+        } else {
+          log.value = log.value.concat("openStore was successful \n");
+          wrapper.clear( (err) => {
+            if(err) {
+              wrapperError(err);
+            } else {
+
+              log.value = log.value.concat("\n**** Test Wrapper was successful ****\n"); 
+
+            }
 
 
+          });
+
+        }
+      });
+      */
+    });
+    return { log, errMsg, wrapper };
+  }
+});
+/*
     log.value = log.value.concat("**** Starting Test Wrapper Store ****\n"); 
     // open store
 
@@ -83,4 +128,5 @@ export default defineComponent({
   }
 
 });
+*/
 </script>

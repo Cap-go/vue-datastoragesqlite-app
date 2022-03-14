@@ -1,13 +1,6 @@
 <template>
   <h1>StoreDefault</h1>
-  <Suspense>
-    <template #default>
-      <DefaultTest />
-    </template>
-    <template #feedback>
-      <div> Loading ... </div>
-    </template>
-  </Suspense>
+  <DefaultTest />
 </template>
 <script>
 import DefaultTest from '@/components/DefaultTest.vue';

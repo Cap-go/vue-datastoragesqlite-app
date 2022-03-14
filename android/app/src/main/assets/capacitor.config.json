@@ -1,8 +1,13 @@
 {
-  "appId": "com.jeep.app.vue.datastoragesqlite",
-  "appName": "vue-datastoragesqlite-app",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "dist",
-  "cordova": {}
+	"appId": "com.jeep.app.vue.datastoragesqlite",
+	"appName": "vue-datastoragesqlite-app",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "dist",
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	},
+	"cordova": {}
 }
